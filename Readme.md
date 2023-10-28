@@ -1,4 +1,4 @@
-This app is built with Node-ts (so that i don't need to compile to JS)
+This app is built with Node-ts (so that i don't need to compile to JS), soon i will add SWC for performance issues
 
 To start the server, use the following commands:
 
