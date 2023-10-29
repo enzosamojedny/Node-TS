@@ -53,10 +53,8 @@ constructor(public products:ProductInterface[],private path:string){}
         }
     }
     getProductById(productId:string):ProductInterface|undefined{
-        //console.log("this.products:",this.products)
-        const readFile = JSON.parse(fs.readFileSync(this.path, 'utf-8')) as Array<any>;
+        const readFile = JSON.parse(fs.readFileSync(this.path, 'utf-8')) as Array<any>;//!
         const foundProduct = readFile.find(p=>p.id===productId)
-        console.log("Found product",readFile)
         if(foundProduct){
            return  foundProduct;
         }else{
