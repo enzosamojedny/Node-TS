@@ -29,13 +29,13 @@ constructor(public products:ProductInterface[],private path:string){}
         }
         product.id = uuidv4()
         let values = {
+            id:product.id,
             title:product.title, 
             description:product.description,
             price:product.price,
             thumbnail:product.thumbnail,
             code:product.code,
             stock:product.stock,
-            id:product.id
         }
         this.products.push(values)
         try {
@@ -53,7 +53,10 @@ constructor(public products:ProductInterface[],private path:string){}
         }
     }
     getProductById(productId:string):ProductInterface|undefined{
-        const foundProduct = this.products.find(p=>p.id===productId)
+        //console.log("this.products:",this.products)
+        const readFile = JSON.parse(fs.readFileSync(this.path, 'utf-8')) as Array<any>;
+        const foundProduct = readFile.find(p=>p.id===productId)
+        console.log("Found product",readFile)
         if(foundProduct){
            return  foundProduct;
         }else{
@@ -85,62 +88,69 @@ constructor(public products:ProductInterface[],private path:string){}
     }
 }
 
-const productManager = new ProductManager([],'./Logs/Logs.txt')
+const productManager = new ProductManager([],'./Logs/Logs.json')
 
 const product1:ProductInterface = {
+    id: uuidv4(),
   title: 'Product 1',
   description: 'Description for Product 1',
   price: 10,
   thumbnail: 'product1.jpg',
   code: 'P1',
   stock: 100,
-  id: uuidv4(),
+  
 }
 const product2:ProductInterface = {
+    id: uuidv4(),
     title: 'Product 2',
     description: 'Description for Product 2',
     price: 20,
     thumbnail: 'product2.jpg',
     code: 'P2',
     stock: 200,
-    id: uuidv4(),
+    
   }
   const product3:ProductInterface = {
+    id: uuidv4(),
     title: 'Product 3',
     description: 'Description for Product 3',
     price: 30,
     thumbnail: 'product3.jpg',
     code: 'P3',
     stock: 300,
-    id: uuidv4(),
+    
   }
   const product4:ProductInterface = {
+    id: uuidv4(),
     title: 'Product 4',
     description: 'Description for Product 4',
     price: 40,
     thumbnail: 'product4.jpg',
     code: 'P4',
     stock: 400,
-    id: uuidv4(),
+    
   }
   const product5:ProductInterface = {
+    id: uuidv4(),
     title: 'Product 5',
     description: 'Description for Product 5',
     price: 50,
     thumbnail: 'product5.jpg',
     code: 'P5',
     stock: 500,
-    id: uuidv4(),
+    
   }
+
   productManager.addProduct(product1)
   productManager.addProduct(product2)
   productManager.addProduct(product3)
   productManager.addProduct(product4)
   productManager.addProduct(product5)
-  console.log('ALL PRODUCTS: ', productManager.getProducts())
-  const productById1 = productManager.getProductById(product1.id)
-  const productById2 = productManager.getProductById(product2.id)
-//   console.log('PRODUCT 1 BY ID:',productById1)
+
+  //console.log('ALL PRODUCTS: ', productManager.getProducts())
+  //const productById1 = productManager.getProductById(product1.id)
+  //const productById2 = productManager.getProductById(product2.id)
+   //console.log('PRODUCT 1 BY ID:',product1.id)
 //   console.log('PRODUCT 2 BY ID:',productById2)
 
  /*productManager.deleteProduct(product1.id)

@@ -1,6 +1,7 @@
 import express from 'express';
 import { Request, Response } from 'express';
-import Products from './index';
+import {Products} from './index';
+import  {ProductId}  from './index';
 import morgan from 'morgan';
 const app = express();
 const port = 3001;
@@ -10,6 +11,7 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to my e-commerce!');
 });
 app.get('/products',Products)
+app.get('/products/:id',ProductId)
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
