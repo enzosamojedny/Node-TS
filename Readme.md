@@ -1,10 +1,12 @@
-This app is built with Node-ts (so that i don't need to compile to JS), soon i will add SWC for performance issues
+This app was built with Node-ts (so that there's no need to compile to JS), soon SWC will be added to improve performance.
 
 To start the server, use the following commands:
 
-npx ts-node App.ts
+--->npx ts-node App.ts
 OR
-npx ts-node-dev App.ts, the second command will watch for changes and restart express
+--->npx ts-node-dev App.ts
+
+The second command will watch for changes and restart express.
 
 ---> execute http://localhost:3001/products to get all products
 
