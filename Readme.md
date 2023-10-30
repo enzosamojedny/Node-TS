@@ -3,7 +3,7 @@ This app was built with Node-ts (so that there's no need to compile to JS), soon
 To start the server, use the following commands:
 
 --->npx ts-node App.ts
-OR
+
 --->npx ts-node-dev App.ts
 
 The second command will watch for changes and restart express.
