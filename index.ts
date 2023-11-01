@@ -25,9 +25,7 @@ export const Products = router.get('/products', (req, res) => {
 export const ProductId = router.get('/products/:id', (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        console.log('Received ID:', id);
         const products = productManager.getProductById(id);
-        console.log('Found Product:', products);
         if (products) {
             res.status(200).json({ products });
         } else {
