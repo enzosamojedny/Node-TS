@@ -4,7 +4,9 @@ To start the server, use the following commands:
 
 npx ts-node App.ts
 OR
-npx ts-node-dev App.ts, the second command will watch for changes and restart express
+npx ts-node-dev App.ts, the second command will watch for changes and restart express,
+
+npx ts-node --swc App.ts
 
 ---> execute http://localhost:3001/products to get all products
 
