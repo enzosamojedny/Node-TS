@@ -5,16 +5,8 @@ import * as fs from 'fs';
 //     crypto.createHmac('sha256',salt).update(value).digest('hex')
 // }
 
-interface ProductInterface {
-    title: string,
-    description: string,
-    price: number,
-    thumbnail: string,
-    code: string,
-    stock: number,
-    id: string
-}
-interface AddProductInterface{
+
+interface ProductInterface{
     id: string,
     title: string,
     description: string,
@@ -31,7 +23,7 @@ constructor(public products:ProductInterface[],private path:string){
     this.path = path
 }
     
-    addProduct(product:AddProductInterface){
+    addProduct(product:ProductInterface){
         const existingProduct = this.products.find(p=>p.code === product.code)
         const readFile = JSON.parse(fs.readFileSync(this.path, 'utf-8')) as Array<any>;//!
         if(existingProduct){
@@ -98,6 +90,7 @@ constructor(public products:ProductInterface[],private path:string){
            return productToUpdate;
         }else{
             console.log('Could not delete; Product not found')
+            
             return undefined
         }
     }
@@ -105,7 +98,7 @@ constructor(public products:ProductInterface[],private path:string){
 
 const productManager = new ProductManager([],'./src/Logs/Logs.json')
 
-const product1:AddProductInterface = {
+const product1:ProductInterface = {
     id: uuidv4(),
     title: "Motherboard ASUS",
     description: "The best motherboard in the world",
@@ -117,7 +110,7 @@ const product1:AddProductInterface = {
     thumbnail: "http://fakeproduct/product/motherboard",
     
 }
-const product2:AddProductInterface = {
+const product2:ProductInterface = {
     id: uuidv4(),
     title: "Gaming PC",
     description: "The best gaming pc in the world",
@@ -128,7 +121,7 @@ const product2:AddProductInterface = {
     category:"pc",
     thumbnail: "http://fakeproduct/product/pc",
   }
-  const product3:AddProductInterface = {
+  const product3:ProductInterface = {
     id: uuidv4(),
     title: "Kettle",
     description: "The best kettle in the world",
@@ -140,7 +133,7 @@ const product2:AddProductInterface = {
     thumbnail: "http://fakeproduct/product/kettle",
     
   }
-  const product4:AddProductInterface = {
+  const product4:ProductInterface = {
     id: uuidv4(),
     title: "Silent keyboard",
     description: "The best silent keyboard in the world",
@@ -152,7 +145,7 @@ const product2:AddProductInterface = {
     thumbnail: "http://fakeproduct/product/keyboard",
     
   }
-  const product5:AddProductInterface = {
+  const product5:ProductInterface = {
     id: uuidv4(),
     title: "Coffee cup",
     description: "The best coffee cup in the world",

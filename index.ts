@@ -53,3 +53,19 @@ export const AddProduct = router.post('/products',(req:Request,res:Response)=>{
         }
     }
 })
+export const UpdateProduct = router.put('/products/:id',(req:Request,res:Response)=>{
+    try {
+        const {id} = req.params
+        const productToUpdate = req.body
+        if(!productToUpdate){
+            throw new Error("Product details not provided in the request body")
+        }
+        const updateProduct = productManager.updateProduct(id,productToUpdate)
+        res.status(200).json({updateProduct})
+    } catch (error) {
+        if (error instanceof Error) {
+            res.status(400).send({ message: error.message });
+        }
+    }
+})
+export const DeleteProduct = router.delete('/products/:id',(req:Request,res:Response)=>{})
