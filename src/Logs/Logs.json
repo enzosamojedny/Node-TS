@@ -1,9 +1,31 @@
 [
   {
-    "id": "b869595d-a120-4e44-83e4-b78c5026ea2e",
+    "id": "54061197-f42c-4caf-9061-80f364f68578",
     "title": "Coffee cup2",
     "description": "The best coffee cup in the world2",
     "code": "05abc2",
+    "price": 5002,
+    "status": true,
+    "stock": 5002,
+    "category": "PC2",
+    "thumbnail": "http://fakeproduct/product/coffeecup2"
+  },
+  {
+    "id": "03a69a99-46db-4dda-b6ea-b0c46d3b58ff",
+    "title": "Coffee cup2",
+    "description": "The best coffee cup in the world2",
+    "code": "05abc2",
+    "price": 5002,
+    "status": true,
+    "stock": 5002,
+    "category": "PC2",
+    "thumbnail": "http://fakeproduct/product/coffeecup2"
+  },
+  {
+    "id": "04bd5e4f-fbdf-4f8a-bcfb-768e075eeaba",
+    "title": "Coffee cup3",
+    "description": "The best coffee cup in the world2",
+    "code": "05abc3",
     "price": 5002,
     "status": true,
     "stock": 5002,

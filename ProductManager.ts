@@ -26,7 +26,10 @@ interface AddProductInterface{
     thumbnail: string,
 }
  export default class ProductManager{
-constructor(public products:ProductInterface[],private path:string){}
+constructor(public products:ProductInterface[],private path:string){
+    this.products = products,
+    this.path = path
+}
     
     addProduct(product:AddProductInterface){
         const existingProduct = this.products.find(p=>p.code === product.code)
@@ -51,6 +54,7 @@ constructor(public products:ProductInterface[],private path:string){}
             thumbnail: product.thumbnail,
         }
         this.products.push(values)
+        
         try {
                 fs.writeFileSync(this.path, JSON.stringify(this.products,null,2));
         } catch (error) {
@@ -123,7 +127,6 @@ const product2:AddProductInterface = {
     stock: 200,
     category:"pc",
     thumbnail: "http://fakeproduct/product/pc",
-    
   }
   const product3:AddProductInterface = {
     id: uuidv4(),
