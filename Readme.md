@@ -1,16 +1,8 @@
 This app was built with Node-ts (so that there's no need to compile to JS), soon SWC will be added to improve performance.
 
-To start the server, use the following commands:
+To start the server, use the following command:
 
-npx ts-node App.ts
-OR
-npx ts-node-dev App.ts, the second command will watch for changes and restart express,
-
-npx ts-node --swc App.ts
-
---->npx ts-node App.ts
-
---->npx ts-node-dev App.ts
+--->npx ts-node --swc App.ts
 
 The second command will watch for changes and restart express.
 

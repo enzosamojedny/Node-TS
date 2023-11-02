@@ -1,6 +1,6 @@
 [
   {
-    "id": "8747ff18-a4c7-4b83-8265-8ea81c17a672",
+    "id": "3d2af13d-44b2-4350-9780-b861f49d113c",
     "title": "Product 1",
     "description": "Description for Product 1",
     "price": 10,
@@ -9,7 +9,7 @@
     "stock": 100
   },
   {
-    "id": "54cbac2d-1808-4d5a-9c21-8322616df965",
+    "id": "ec5145c2-bcdb-4684-af53-36c43486e4aa",
     "title": "Product 2",
     "description": "Description for Product 2",
     "price": 20,
@@ -18,7 +18,7 @@
     "stock": 200
   },
   {
-    "id": "11de3c13-f7cd-4456-a182-ceada7048b65",
+    "id": "04589a41-f9f6-4ca7-a440-6484f0118b66",
     "title": "Product 3",
     "description": "Description for Product 3",
     "price": 30,
@@ -27,7 +27,7 @@
     "stock": 300
   },
   {
-    "id": "d7aec2db-5f62-4caf-87b1-3fe87f0bdfe5",
+    "id": "2f4023a3-4d72-4761-bc9b-328f8ab257e9",
     "title": "Product 4",
     "description": "Description for Product 4",
     "price": 40,
@@ -36,7 +36,7 @@
     "stock": 400
   },
   {
-    "id": "2371b0ac-22f1-4849-83ce-5d0adea80626",
+    "id": "e427a1f3-9df6-437e-877f-b584f7b02783",
     "title": "Product 5",
     "description": "Description for Product 5",
     "price": 50,
