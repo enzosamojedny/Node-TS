@@ -68,4 +68,14 @@ export const UpdateProduct = router.put('/products/:id',(req:Request,res:Respons
         }
     }
 })
-export const DeleteProduct = router.delete('/products/:id',(req:Request,res:Response)=>{})
+export const DeleteProduct = router.delete('/products/:id',(req:Request,res:Response)=>{
+    try {
+        const {id} = req.params
+        const updateProduct = productManager.deleteProduct(id)
+        res.status(200).json({updateProduct})
+    } catch (error) {
+        if (error instanceof Error) {
+            res.status(400).send({ message: error.message });
+        }
+    }
+})
