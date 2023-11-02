@@ -14,12 +14,23 @@ interface ProductInterface {
     stock: number,
     id: string
 }
+interface AddProductInterface{
+    id: string,
+    title: string,
+    description: string,
+    code: string,
+    price: number,
+    status:boolean,
+    stock: number,
+    category:string,
+    thumbnail: string,
+}
  export default class ProductManager{
 constructor(public products:ProductInterface[],private path:string){}
     
-    addProduct(product:ProductInterface){
+    addProduct(product:AddProductInterface){
         const existingProduct = this.products.find(p=>p.code === product.code)
-        
+        const readFile = JSON.parse(fs.readFileSync(this.path, 'utf-8')) as Array<any>;//!
         if(existingProduct){
             console.log('A product with that code already exists')
         }
@@ -29,13 +40,15 @@ constructor(public products:ProductInterface[],private path:string){}
         }
         product.id = uuidv4()
         let values = {
-            id:product.id,
-            title:product.title, 
-            description:product.description,
-            price:product.price,
-            thumbnail:product.thumbnail,
-            code:product.code,
-            stock:product.stock,
+            id: product.id,
+            title: product.title,
+            description: product.description,
+            code: product.code,
+            price: product.price,
+            status:product.status,
+            stock: product.stock,
+            category:product.category,
+            thumbnail: product.thumbnail,
         }
         this.products.push(values)
         try {
@@ -88,54 +101,64 @@ constructor(public products:ProductInterface[],private path:string){}
 
 const productManager = new ProductManager([],'./src/Logs/Logs.json')
 
-const product1:ProductInterface = {
+const product1:AddProductInterface = {
     id: uuidv4(),
-  title: 'Product 1',
-  description: 'Description for Product 1',
-  price: 10,
-  thumbnail: 'product1.jpg',
-  code: 'P1',
-  stock: 100,
-  
+    title: "Motherboard ASUS",
+    description: "The best motherboard in the world",
+    code: "01abc",
+    price: 100,
+    status:true,
+    stock: 100,
+    category:"pc",
+    thumbnail: "http://fakeproduct/product/motherboard",
+    
 }
-const product2:ProductInterface = {
+const product2:AddProductInterface = {
     id: uuidv4(),
-    title: 'Product 2',
-    description: 'Description for Product 2',
-    price: 20,
-    thumbnail: 'product2.jpg',
-    code: 'P2',
+    title: "Gaming PC",
+    description: "The best gaming pc in the world",
+    code: "02abc",
+    price: 200,
+    status:true,
     stock: 200,
+    category:"pc",
+    thumbnail: "http://fakeproduct/product/pc",
     
   }
-  const product3:ProductInterface = {
+  const product3:AddProductInterface = {
     id: uuidv4(),
-    title: 'Product 3',
-    description: 'Description for Product 3',
-    price: 30,
-    thumbnail: 'product3.jpg',
-    code: 'P3',
+    title: "Kettle",
+    description: "The best kettle in the world",
+    code: "03abc",
+    price: 300,
+    status:true,
     stock: 300,
+    category:"kettles",
+    thumbnail: "http://fakeproduct/product/kettle",
     
   }
-  const product4:ProductInterface = {
+  const product4:AddProductInterface = {
     id: uuidv4(),
-    title: 'Product 4',
-    description: 'Description for Product 4',
-    price: 40,
-    thumbnail: 'product4.jpg',
-    code: 'P4',
+    title: "Silent keyboard",
+    description: "The best silent keyboard in the world",
+    code: "04abc",
+    price: 400,
+    status:true,
     stock: 400,
+    category:"keyboards",
+    thumbnail: "http://fakeproduct/product/keyboard",
     
   }
-  const product5:ProductInterface = {
+  const product5:AddProductInterface = {
     id: uuidv4(),
-    title: 'Product 5',
-    description: 'Description for Product 5',
-    price: 50,
-    thumbnail: 'product5.jpg',
-    code: 'P5',
+    title: "Coffee cup",
+    description: "The best coffee cup in the world",
+    code: "05abc",
+    price: 500,
+    status:true,
     stock: 500,
+    category:"PC",
+    thumbnail: "http://fakeproduct/product/coffeecup",
     
   }
 

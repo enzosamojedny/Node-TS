@@ -38,4 +38,18 @@ export const ProductId = router.get('/products/:id', (req: Request, res: Respons
         }
     }
 });
+export const AddProduct = router.post('/products',(req:Request,res:Response)=>{
+    try {
+        const productDetails = req.body
 
+        if (!productDetails) {
+            throw new Error("Product details not provided in the request body");
+        }
+        const addedProduct = productManager.addProduct(productDetails)
+        res.status(200).json({product:addedProduct})
+    } catch (error) {
+        if (error instanceof Error) {
+            res.status(400).send({ message: error.message });
+        }
+    }
+})

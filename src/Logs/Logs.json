@@ -1,47 +1,13 @@
 [
   {
-    "id": "facfca60-54cc-4e36-9df3-861ba9c6ab51",
-    "title": "Product 1",
-    "description": "Description for Product 1",
-    "price": 10,
-    "thumbnail": "product1.jpg",
-    "code": "P1",
-    "stock": 100
-  },
-  {
-    "id": "657c3c52-2326-47ab-a168-39fba573c4c1",
-    "title": "Product 2",
-    "description": "Description for Product 2",
-    "price": 20,
-    "thumbnail": "product2.jpg",
-    "code": "P2",
-    "stock": 200
-  },
-  {
-    "id": "54c2d051-dc06-445a-9490-c99153885219",
-    "title": "Product 3",
-    "description": "Description for Product 3",
-    "price": 30,
-    "thumbnail": "product3.jpg",
-    "code": "P3",
-    "stock": 300
-  },
-  {
-    "id": "22dcf54a-6571-4a0e-a699-bffb15252316",
-    "title": "Product 4",
-    "description": "Description for Product 4",
-    "price": 40,
-    "thumbnail": "product4.jpg",
-    "code": "P4",
-    "stock": 400
-  },
-  {
-    "id": "62d8d9ef-81b8-4ed6-be86-04c6a563c060",
-    "title": "Product 5",
-    "description": "Description for Product 5",
-    "price": 50,
-    "thumbnail": "product5.jpg",
-    "code": "P5",
-    "stock": 500
+    "id": "b869595d-a120-4e44-83e4-b78c5026ea2e",
+    "title": "Coffee cup2",
+    "description": "The best coffee cup in the world2",
+    "code": "05abc2",
+    "price": 5002,
+    "status": true,
+    "stock": 5002,
+    "category": "PC2",
+    "thumbnail": "http://fakeproduct/product/coffeecup2"
   }
 ]
