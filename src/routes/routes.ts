@@ -13,6 +13,6 @@ router.post('/')
 router.post('/')
 router.put('/:pid')
 router.delete('/:pid')
-router.get('/:cid')
+router.get('/:cartid')
 router.post('/:cid/product/:pid')
 export default router

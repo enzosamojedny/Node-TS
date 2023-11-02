@@ -86,7 +86,7 @@ constructor(public products:ProductInterface[],private path:string){}
     }
 }
 
-const productManager = new ProductManager([],'./Logs/Logs.json')
+const productManager = new ProductManager([],'./src/Logs/Logs.json')
 
 const product1:ProductInterface = {
     id: uuidv4(),

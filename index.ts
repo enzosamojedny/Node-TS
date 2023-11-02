@@ -2,7 +2,7 @@ import express from 'express'
 import ProductManager from './ProductManager'
 import { Request,Response } from 'express'
 const router = express.Router()
-const productManager = new ProductManager([], './Logs/Logs.json')
+const productManager = new ProductManager([], './src/Logs/Logs.json')
 
 
 export const Products = router.get('/products', (req, res) => {
@@ -25,6 +25,7 @@ export const Products = router.get('/products', (req, res) => {
 export const ProductId = router.get('/products/:id', (req: Request, res: Response) => {
     try {
         const { id } = req.params;
+        console.log('data',id)
         const products = productManager.getProductById(id);
         if (products) {
             res.status(200).json({ products });
