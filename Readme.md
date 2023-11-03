@@ -10,4 +10,8 @@ The second command will watch for changes and restart express.
 
 ---> execute http://localhost:3001/products?limit=5 to limit the result ( right now, there are only 5 products)
 
----> execute http://localhost:3001/products/{id} to get a product by ID
+---> execute http://localhost:3001/products/{id} to GET a product by ID
+
+---> execute http://localhost:3001/products/{id} to POST a product
+
+---> execute http://localhost:3001/products/{id} to DELETE a product
