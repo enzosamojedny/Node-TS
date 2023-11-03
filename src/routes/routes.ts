@@ -17,6 +17,6 @@ router.get('/', (req: Request, res: Response) => {
 
   router.post('/')
   
-  router.get('/:cartid')
+  router.get('/api/carts/')
   router.post('/:cid/product/:pid')
 export default router

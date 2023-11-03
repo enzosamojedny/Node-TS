@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "a26dcfac-ed66-4274-9b9d-aa8f81cb53a5",
+    "title": "Holi otra vez",
+    "description": "Este es un test",
+    "code": "Code",
+    "price": 10000,
+    "status": false,
+    "stock": 5,
+    "category": "cinco",
+    "thumbnail": "http://fakeproduct/product/5"
+  }
+]

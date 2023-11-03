@@ -1,9 +1,10 @@
 import express from 'express'
 import ProductManager from './ProductManager'
+import CartManager from './CartManager'
 import { Request,Response } from 'express'
 const router = express.Router()
 const productManager = new ProductManager([], './src/Logs/Logs.json')
-
+const cartManager = new CartManager([],'./src/Logs/Cart.json')
 
 export const Products = router.get('/products', (req, res) => {
     try {
