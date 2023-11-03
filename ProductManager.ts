@@ -46,7 +46,6 @@ constructor(public products:ProductInterface[],private path:string){
             thumbnail: product.thumbnail,
         }
         this.products.push(values)
-        
         try {
                 fs.writeFileSync(this.path, JSON.stringify(this.products,null,2));
         } catch (error) {
@@ -62,7 +61,7 @@ constructor(public products:ProductInterface[],private path:string){
         }
     }
     getProductById(productId:string):ProductInterface|undefined{
-        const readFile = JSON.parse(fs.readFileSync(this.path, 'utf-8')) as Array<any>;//!
+        const readFile = this.products//!
         const foundProduct = readFile.find(p=>p.id===productId)
         if(foundProduct){
            return  foundProduct;
@@ -98,7 +97,7 @@ constructor(public products:ProductInterface[],private path:string){
 
 const productManager = new ProductManager([],'./src/Logs/Logs.json')
 
-const product1:ProductInterface = {
+/*const product1:ProductInterface = {
     id: uuidv4(),
     title: "Motherboard ASUS",
     description: "The best motherboard in the world",
@@ -162,14 +161,4 @@ const product2:ProductInterface = {
   productManager.addProduct(product2)
   productManager.addProduct(product3)
   productManager.addProduct(product4)
-  productManager.addProduct(product5)
-
-  //console.log('ALL PRODUCTS: ', productManager.getProducts())
-  //const productById1 = productManager.getProductById(product1.id)
-  //const productById2 = productManager.getProductById(product2.id)
-   //console.log('PRODUCT 1 BY ID:',product1.id)
-//   console.log('PRODUCT 2 BY ID:',productById2)
-
- /*productManager.deleteProduct(product1.id)
-
- productManager.updateProduct(product1.id, {description:'Esta es una description actualizada'})*/
+  productManager.addProduct(product5)*/

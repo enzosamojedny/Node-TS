@@ -3,6 +3,8 @@ const router = Router()
 import { Request, Response } from 'express';
 import {Products,ProductId,AddProduct,UpdateProduct,DeleteProduct} from '../../index';
 
+
+
 router.get('/', (req: Request, res: Response) => {
     res.send('Welcome to my e-commerce!');
   });

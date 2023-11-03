@@ -57,6 +57,8 @@ export const UpdateProduct = router.put('/products/:id',(req:Request,res:Respons
     try {
         const {id} = req.params
         const productToUpdate = req.body
+        console.log(req.body)
+        console.log(id)
         if(!productToUpdate){
             throw new Error("Product details not provided in the request body")
         }

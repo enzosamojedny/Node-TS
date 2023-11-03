@@ -1,35 +1,24 @@
 [
   {
-    "id": "54061197-f42c-4caf-9061-80f364f68578",
-    "title": "Coffee cup2",
-    "description": "The best coffee cup in the world2",
-    "code": "05abc2",
-    "price": 5002,
-    "status": true,
-    "stock": 5002,
-    "category": "PC2",
-    "thumbnail": "http://fakeproduct/product/coffeecup2"
+    "id": "8ba5370a-3135-495e-a8bf-a764f55f0a5a",
+    "title": "Holi",
+    "description": "Estoy posteado por ultima vez",
+    "code": "Code",
+    "price": 5,
+    "status": false,
+    "stock": 5,
+    "category": "cinco",
+    "thumbnail": "http://fakeproduct/product/5"
   },
   {
-    "id": "03a69a99-46db-4dda-b6ea-b0c46d3b58ff",
-    "title": "Coffee cup2",
-    "description": "The best coffee cup in the world2",
-    "code": "05abc2",
-    "price": 5002,
-    "status": true,
-    "stock": 5002,
-    "category": "PC2",
-    "thumbnail": "http://fakeproduct/product/coffeecup2"
-  },
-  {
-    "id": "04bd5e4f-fbdf-4f8a-bcfb-768e075eeaba",
-    "title": "Coffee cup3",
-    "description": "The best coffee cup in the world2",
-    "code": "05abc3",
-    "price": 5002,
-    "status": true,
-    "stock": 5002,
-    "category": "PC2",
-    "thumbnail": "http://fakeproduct/product/coffeecup2"
+    "id": "9933d685-1993-415c-8f3a-f5d3092e3623",
+    "title": "Holi",
+    "description": "Estoy posteado por ultima vez",
+    "code": "Code",
+    "price": 5,
+    "status": false,
+    "stock": 5,
+    "category": "cinco",
+    "thumbnail": "http://fakeproduct/product/5"
   }
 ]
