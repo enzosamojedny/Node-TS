@@ -26,7 +26,6 @@ export const Products = router.get('/products', (req, res) => {
 export const ProductId = router.get('/products/:id', (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        console.log('data',id)
         const products = productManager.getProductById(id);
         if (products) {
             res.status(200).json({ products });
@@ -82,3 +81,34 @@ export const DeleteProduct = router.delete('/products/:id',(req:Request,res:Resp
         }
     }
 })
+export const PostCart = router.post('/api/carts',(req:Request,res:Response)=>{
+    try {
+        const productDetails = req.body
+        
+        if (!productDetails) {
+            throw new Error("Product details not provided in the request body");
+        }
+        const addedProduct = cartManager.addCart(productDetails)
+        res.status(200).json({product:addedProduct})
+    } catch (error) {
+        if (error instanceof Error) {
+            res.status(400).send({ message: error.message });
+        }
+    }
+})
+
+ export const GetCartId = router.get('/api/carts/:id',(req:Request,res:Response)=>{
+     try {
+         const {id} = req.params
+         if (!id) {
+             throw new Error("Product ID not provided in the request");
+         }
+         const idCart = cartManager.getCartById(id)
+         res.status(200).json({product:idCart})
+     } catch (error) {
+         if (error instanceof Error) {
+             res.status(400).send({ message: error.message });
+         }
+     }
+ })
+ 

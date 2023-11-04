@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router()
 import { Request, Response } from 'express';
-import {Products,ProductId,AddProduct,UpdateProduct,DeleteProduct} from '../../index';
+import {Products,ProductId,AddProduct,UpdateProduct,DeleteProduct,PostCart,GetCartId} from '../../index';
 
 
 
@@ -13,10 +13,9 @@ router.get('/', (req: Request, res: Response) => {
   router.post('/products',AddProduct)
   router.put('/products/:id',UpdateProduct)
   router.delete('/products/:id',DeleteProduct)
-  //RUTAS A HACER
-
-  router.post('/')
+  //cart
+  router.post('/api/carts',PostCart)
+  router.get('/api/carts/:id',GetCartId)
+  router.post('/api/:cartid/product/:productid')
   
-  router.get('/api/carts/')
-  router.post('/:cid/product/:pid')
 export default router

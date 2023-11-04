@@ -13,8 +13,6 @@ export default class CartManager {
     }
     
     addCart(products:CartInterface){
-        const readFile = JSON.parse(fs.readFileSync(this.path, 'utf-8')) as Array<any>;//!
-
         if(!products.cart|| products.cart.length === 0){
             console.log('All fields are mandatory')
             return;
@@ -25,13 +23,21 @@ export default class CartManager {
             cart: products.cart,
             quantity: products.quantity
         }
-        this.cart.push(values)
+        let result = this.cart.push(values)
         try {
-                fs.writeFileSync(this.path, JSON.stringify(this.cart,null,2));
+                fs.writeFileSync(this.path, JSON.stringify(result,null,2));
         } catch (error) {
             throw new Error(`404: Error writing file ${error}`)
         }
     }
+    getCartById(cartId:string):CartInterface|undefined{
+        const cart = this.cart
+        const foundCart = cart.find(p=>p.id===cartId)
+        if(foundCart){
+            return foundCart;
+         }else{
+             console.log('Not found')
+             return undefined
+         }
+    }
 }
-
-const cartManager = new CartManager([],'./src/Logs/Cart.json')

@@ -1,11 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import * as fs from 'fs';
 
-// function encrypt(value:number,salt:number){
-//     crypto.createHmac('sha256',salt).update(value).digest('hex')
-// }
-
-
 interface ProductInterface{
     id: string,
     title: string,
@@ -94,71 +89,3 @@ constructor(public products:ProductInterface[],private path:string){
         }
     }
 }
-
-const productManager = new ProductManager([],'./src/Logs/Logs.json')
-
-/*const product1:ProductInterface = {
-    id: uuidv4(),
-    title: "Motherboard ASUS",
-    description: "The best motherboard in the world",
-    code: "01abc",
-    price: 100,
-    status:true,
-    stock: 100,
-    category:"pc",
-    thumbnail: "http://fakeproduct/product/motherboard",
-    
-}
-const product2:ProductInterface = {
-    id: uuidv4(),
-    title: "Gaming PC",
-    description: "The best gaming pc in the world",
-    code: "02abc",
-    price: 200,
-    status:true,
-    stock: 200,
-    category:"pc",
-    thumbnail: "http://fakeproduct/product/pc",
-  }
-  const product3:ProductInterface = {
-    id: uuidv4(),
-    title: "Kettle",
-    description: "The best kettle in the world",
-    code: "03abc",
-    price: 300,
-    status:true,
-    stock: 300,
-    category:"kettles",
-    thumbnail: "http://fakeproduct/product/kettle",
-    
-  }
-  const product4:ProductInterface = {
-    id: uuidv4(),
-    title: "Silent keyboard",
-    description: "The best silent keyboard in the world",
-    code: "04abc",
-    price: 400,
-    status:true,
-    stock: 400,
-    category:"keyboards",
-    thumbnail: "http://fakeproduct/product/keyboard",
-    
-  }
-  const product5:ProductInterface = {
-    id: uuidv4(),
-    title: "Coffee cup",
-    description: "The best coffee cup in the world",
-    code: "05abc",
-    price: 500,
-    status:true,
-    stock: 500,
-    category:"PC",
-    thumbnail: "http://fakeproduct/product/coffeecup",
-    
-  }
-
-  productManager.addProduct(product1)
-  productManager.addProduct(product2)
-  productManager.addProduct(product3)
-  productManager.addProduct(product4)
-  productManager.addProduct(product5)*/
