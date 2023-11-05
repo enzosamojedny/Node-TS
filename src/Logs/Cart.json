@@ -1,20 +1,10 @@
 [
   {
-    "id": "ca420989-24ca-41e6-8857-6230bc325e74",
+    "id": "68a550f2-db39-42f4-8839-ebeef7bf0973",
     "cart": [
-      "papas",
-      "papitas",
-      "papassss"
+      "Aca van los ID2",
+      "799d7b33-72cc-4c3b-8fc0-8ee5b354f0f2"
     ],
-    "quantity": 300
-  },
-  {
-    "id": "79cfc8f5-d298-4ba9-8118-2d7cb4307392",
-    "cart": [
-      "papas",
-      "papitas",
-      "papassss"
-    ],
-    "quantity": 300
+    "quantity": 304
   }
 ]

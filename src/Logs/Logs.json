@@ -1,10 +1,10 @@
 [
   {
-    "id": "a26dcfac-ed66-4274-9b9d-aa8f81cb53a5",
+    "id": "799d7b33-72cc-4c3b-8fc0-8ee5b354f0f2",
     "title": "Holi otra vez",
     "description": "Este es un test",
     "code": "Code",
-    "price": 10000,
+    "price": 5,
     "status": false,
     "stock": 5,
     "category": "cinco",
