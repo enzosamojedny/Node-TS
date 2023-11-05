@@ -15,3 +15,11 @@ The second command will watch for changes and restart express.
 ---> execute http://localhost:3001/products/{id} to POST a product
 
 ---> execute http://localhost:3001/products/{id} to DELETE a product
+
+CART ROUTES
+
+---> execute http://localhost:3001/api/carts to POST a new cart
+
+---> execute http://localhost:3001/api/${cartid}/product/${productid} to POST a product to an existing cart
+
+---> execute http://localhost:3001/api/carts/${id} to GET a cart by ID

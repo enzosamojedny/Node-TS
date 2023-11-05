@@ -14,7 +14,6 @@ router.get('/', (req: Request, res: Response) => {
   router.post('/products',AddProduct)
   router.put('/products/:id',UpdateProduct)
   router.delete('/products/:id',DeleteProduct)
-  //cart
   router.post('/api/carts',PostCart)
   router.get('/api/carts/:id',GetCartId)
 
