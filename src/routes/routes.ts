@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router()
 import { Request, Response } from 'express';
-import {Products,ProductId,AddProduct,UpdateProduct,DeleteProduct,PostCart,GetCartId} from '../../index';
+import {Products,ProductId,AddProduct,UpdateProduct,DeleteProduct,PostCart,GetCartId,PostCartProduct} from '../../index';
 
 
 
@@ -16,6 +16,6 @@ router.get('/', (req: Request, res: Response) => {
   //cart
   router.post('/api/carts',PostCart)
   router.get('/api/carts/:id',GetCartId)
-  router.post('/api/:cartid/product/:productid')
+  router.post('/api/:cartid/product/:productid',PostCartProduct)
   
 export default router

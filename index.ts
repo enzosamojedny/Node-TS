@@ -41,7 +41,6 @@ export const ProductId = router.get('/products/:id', (req: Request, res: Respons
 export const AddProduct = router.post('/products',(req:Request,res:Response)=>{
     try {
         const productDetails = req.body
-
         if (!productDetails) {
             throw new Error("Product details not provided in the request body");
         }
@@ -57,8 +56,6 @@ export const UpdateProduct = router.put('/products/:id',(req:Request,res:Respons
     try {
         const {id} = req.params
         const productToUpdate = req.body
-        console.log(req.body)
-        console.log(id)
         if(!productToUpdate){
             throw new Error("Product details not provided in the request body")
         }
@@ -111,4 +108,19 @@ export const PostCart = router.post('/api/carts',(req:Request,res:Response)=>{
          }
      }
  })
- 
+ export const PostCartProduct = router.post('/api/:cartid/product/:productid',(req:Request,res:Response)=>{
+    try {
+        const {cartid,productid} = req.params
+        if(!cartid||!productid){
+            throw new Error("Missing data in request");
+        }
+        const quantity = 1
+        const postCartProduct = cartManager.addProductToCart(cartid,productid,quantity)
+        res.status(200).json({cart:postCartProduct})
+    } catch (error) {
+        if (error instanceof Error) {
+        res.status(400).send({ message: error.message });
+        }
+    }
+
+ })

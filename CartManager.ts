@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
-
+import ProductManager from './ProductManager';
+const productManager = new ProductManager([], './src/Logs/Logs.json')
 interface CartInterface{
     id: string,
     cart:string[],
@@ -40,4 +41,21 @@ export default class CartManager {
              return undefined
          }
     }
+    addProductToCart(cartId: string, productId: string, quantity: number): CartInterface | undefined {
+        const cart = this.cart.find((c) => c.id === cartId);
+        if (cart) {
+            const productIndex = cart.cart.indexOf(productId);
+            if (productIndex !== -1) {
+                // If the product is already in the cart, update its quantity
+                cart.quantity += quantity;
+            } else {
+                // If the product is not in the cart, add it to the cart array
+                cart.cart.push(productId);
+            }
+            return cart;
+        }
+        // If the cart with the given ID is not found, return undefined outside the if block.
+        return undefined;
+    }
+    
 }
