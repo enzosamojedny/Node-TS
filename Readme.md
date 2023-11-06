@@ -6,6 +6,8 @@ To start the server, use the following command:
 
 The second command will watch for changes and restart express.
 
+PRODUCT ROUTES
+
 ---> execute http://localhost:3001/products to get all products
 
 ---> execute http://localhost:3001/products?limit=5 to limit the result ( right now, there are only 5 products)
