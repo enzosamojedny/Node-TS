@@ -3,10 +3,8 @@ const router = Router()
 import { Request, Response } from 'express';
 import {Products,ProductId,AddProduct,UpdateProduct,DeleteProduct,PostCart,GetCartId,PostCartProduct} from '../../index';
 
-
-
 router.get('/', (req: Request, res: Response) => {
-    res.send('Welcome to my e-commerce!');
+    res.render('home.hbs',{titulo:'inicio'})
   });
   router.post('/api/:cartid/product/:productid',PostCartProduct)
   router.get('/products',Products)
