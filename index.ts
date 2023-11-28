@@ -1,11 +1,11 @@
+// const productManager = new ProductManager([], "./src/Logs/Logs.json");
+// import ProductManager from "./dao/ProductManagerFS";
 import express from "express";
-import ProductManager from "./dao/ProductManagerFS";
-import CartManager from "./CartManager";
+import CartManager from "./dao/CartManager";
 import { Request, Response } from "express";
 import ProductManagerMongoDB from "./dao/ProductManagerMongoDB";
 const productManagerMongoDB = new ProductManagerMongoDB();
 const router = express.Router();
-const productManager = new ProductManager([], "./src/Logs/Logs.json");
 const cartManager = new CartManager([], "./src/Logs/Cart.json");
 
 export const Products = router.get("/products", async (req, res) => {
