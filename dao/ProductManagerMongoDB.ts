@@ -12,11 +12,6 @@ interface ProductInterface {
   thumbnail: string;
 }
 export default class ProductManager {
-  constructor(public products: ProductInterface[], private path: string) {
-    this.products = products;
-    this.path = path;
-  }
-
   async addProduct(product: ProductInterface) {
     product._id = randomUUID();
     const productCreated = await Products.create(product);
@@ -25,7 +20,7 @@ export default class ProductManager {
   async getProducts() {
     return await Products.find({}).lean();
   }
-  async getProductByid(productId: string): Promise<ProductInterface | null> {
+  async getProductById(productId: string): Promise<ProductInterface | null> {
     return await Products.findById(productId).lean();
   }
   async deleteProduct(productId: string): Promise<ProductInterface | null> {
